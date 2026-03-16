@@ -1,5 +1,5 @@
 /*--------IMPORTACIONES----------*/
-import { monthNames } from "/js/constants.js";
+import { monthNames } from "js/constants.js";
 
 /*--------VARIABLES GLOBALES----------*/
 const months = document.querySelectorAll(".months li");
