@@ -70,7 +70,7 @@ clearButton.addEventListener("click", () => {
 months.forEach((item) => {
   item.addEventListener("click", () => {
     const selectedMonth = item.dataset.month;
-    window.location.href = `/pages/month.html?month=${selectedMonth}`;
+    window.location.href = `./pages/month.html?month=${selectedMonth}`;
   });
 
   updateNotes();
