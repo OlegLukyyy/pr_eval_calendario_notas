@@ -1,4 +1,4 @@
-import { monthNames } from "js/constants.js";
+import { monthNames } from "./constants.js";
 
 const params = new URLSearchParams(window.location.search);
 const monthParam = Number(params.get("month"));
