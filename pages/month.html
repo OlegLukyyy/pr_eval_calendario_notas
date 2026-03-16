@@ -4,24 +4,22 @@
     <meta charset="UTF-8" />
     <title>Notas del mes</title>
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/app_month.js" defer></script>
+    <script type="module" src="/js/app_month.js" defer></script>
   </head>
 
   <body>
     <main class="month">
       <h1 id="tituloMes"></h1>
 
-      <!-- formulario crear nota -->
-      <form id="formNota">
-        <input type="text" id="titulo" placeholder="Título" />
-        <p id="descripcion" placeholder="Descripción"></p>
+      <form id="formNote">
+        <input type="text" id="title" placeholder="Título" />
+        <input type="text" id="description" placeholder="Descripcion" />
+        <input id="new-note" type="submit" />
 
-        <button id="new-note" type="submit">Crear nota</button>
         <p id="error"></p>
       </form>
 
-      <!-- lista de notas -->
-      <ul id="listaNotas"></ul>
+      <ul id="notes-list"></ul>
 
       <button><a href="/index.html">Volver al calendario</a></button>
     </main>
