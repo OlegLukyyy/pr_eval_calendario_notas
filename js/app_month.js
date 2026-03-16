@@ -1,6 +1,9 @@
 const params = new URLSearchParams(window.location.search);
 const monthParam = Number(params.get("month"));
 
+const createButton = document.querySelector("#new-note");
+const title = document.querySelector("#titulo");
+
 const nombresMes = [
   "Enero",
   "Febrero",
@@ -16,17 +19,28 @@ const nombresMes = [
   "Diciembre",
 ];
 
-document.querySelector("#tituloMes").textContent =
-  "Notas de " + nombresMes[monthParam];
+function mostrarTituloMes() {
+  document.querySelector("#tituloMes").textContent =
+    "Notas de " + nombresMes[monthParam];
+}
 
-const params = new URLSearchParams(window.location.search);
-const mes = Number(params.get("mes"));
+if (!isNaN(monthParam)) {
+  mostrarTituloMes();
+}
 
-// mostrar nombre
-mostrarTituloMes();
+if (createButton) {
+  createButton.addEventListener("click", () => {
+    if (title.value.trim() === "") return;
 
-// cargar notas
-mostrarNotas();
+    const notes = JSON.parse(localStorage.getItem("calendarioNotas")) || [];
 
-// eventos
-document.querySelector("#formNota").addEventListener("submit", crearNota);
+    notes.push({
+      name: title.value,
+      mes: monthParam,
+    });
+
+    localStorage.setItem("calendarioNotas", JSON.stringify(notes));
+
+    title.value = ""; // limpiar input
+  });
+}
